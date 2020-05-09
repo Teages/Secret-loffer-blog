@@ -39,6 +39,8 @@
     </style>
   {% endif %}
 
+
+{{% if replyTo %}}
   <script type="text/javascript">
         if ("https://" + window.location.hostname != "{{ site.url }}") {
 			var current_url = window.location.href;
@@ -47,16 +49,32 @@
 			window.location.replace(target_url);
 		}
   </script>
+{{% endif %}}
+
 
 <!--AES START-->
   <script src="{{ site.url }}/{{ site.baseurl }}/assets/js/aes.js"></script>
+  {{% if site.mdUncode %}}
+    <script src="{{ site.url }}/{{ site.baseurl }}/assets/js/markdown-it.min.js"></script>
+  {{% endif %}}
+  
   <script type="text/javascript">
 
     function encrypt()
     {
       var messageToEncrypt=document.getElementById("encryptOrDecriptMessage").value;
+
+      {{% if site.mdUncode %}}
+        var md = window.markdownit();
+        messageToEncrypt = md.render(messageToEncrypt.toString(CryptoJS.enc.Utf8));
+      {{% endif %}}
+
       
-      var key=document.getElementById("key").value;
+      var key_1=document.getElementById("key_1").value;
+      var key_2=document.getElementById("key_2").value;
+      var key_3=document.getElementById("key_3").value;
+
+      var key = key_1+key_2+key_3+"{{ site.AES_password }}";
       
       var encrypted = CryptoJS.AES.encrypt(messageToEncrypt, key);
       
@@ -67,13 +85,17 @@
     {
       var messageToDecrypt=document.getElementById("encryptOrDecriptMessage").value;
       
-      var key=document.getElementById("key").value;
-      
-      var decrypted = CryptoJS.AES.decrypt(messageToDecrypt, key);
-      
-      document.getElementById("result").innerHTML=decrypted.toString(CryptoJS.enc.Utf8);
+      messageToDecrypt = messageToDecrypt.trim().replace(/\s/g,"");
 
-      $("#result").show();
+      var key_1=document.getElementById("key_1").value;
+      var key_2=document.getElementById("key_2").value;
+      var key_3=document.getElementById("key_3").value;
+
+      var key = key_1+key_2+key_3+"{{ site.AES_password }}";
+
+      var decrypted = CryptoJS.AES.decrypt(messageToDecrypt, key);
+
+      document.getElementById("result").innerHTML=decrypted.toString(CryptoJS.enc.Utf8);
 
     }
     
