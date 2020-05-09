@@ -9,6 +9,17 @@ name: LOFFER
 # 描述/签名
 description: LOFFER Blog
 
+
+#
+# Secert 版特殊设置(必须修改)
+#
+
+# 主密码 : 请修改成任意**无规则**的字母+数字组合,256字符号以内
+AES_password: TeagesIsSoSmart111111111
+
+# 加密文档是否需要先解析Markdown
+mdUncode: true #需要填true,不需要填false
+
 #
 # 下面的设定都是可选的
 #
@@ -73,8 +84,12 @@ gitalk:
 # 输入Google Analytics web tracking code
 google_analytics: 
 
-# 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）
+# 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）(例如 https://github.io)
 url: 
+
+# 是否重定向上面的域名 (高级功能,不清楚请不要乱开启)
+replyTo: false
+
 
 # 添加你的博客的二级域名，一般来说是你的repository名
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
