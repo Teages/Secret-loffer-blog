@@ -4,8 +4,8 @@ pre, code {
 
 code.highlighter-rouge {
   font-size: 90%;
-  color: $oc-indigo-9;
-  background-color: $oc-gray-1;
+  color: $oc-indigo-4;
+  background-color: $oc-gray-7;
   padding: .1em .2em;
   border-radius: 3px;
 }
@@ -18,6 +18,7 @@ pre.highlight {
   margin: 1em 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  background: #212121;
 }
 
 .highlight  { background: $oc-gray-0; }

@@ -23,6 +23,7 @@ body {
   font-family: $base-font;
   color: $base-color;
   line-height: 1.7em;
+  background: #343a40;
 }
 
 .container {
@@ -763,17 +764,17 @@ footer {
     border-style: solid;
     border-color: $link-color;
     background-color: $link-color;
-    color: $white;
+    color: $background-color;
     height: 40px;
     width: 40px;
     border-radius: 50%; /* make it round */
     text-align: center;
     &:visited {
-      color: $white;
+      color: $background-color;
       border-color: $link-color;
     }
     &:hover {
-      background-color: $white;
+      background-color: $background-color;
       color: $link-color;
       border-color: $link-color;
     }  
