@@ -48,5 +48,35 @@
 		}
   </script>
 
-  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+<!--AES START-->
+  <script src="{{ site.url }}/{{ site.baseurl }}/assets/js/aes.js"></script>
+  <script type="text/javascript">
+
+    function encrypt()
+    {
+      var messageToEncrypt=document.getElementById("encryptOrDecriptMessage").value;
+      
+      var key=document.getElementById("key").value;
+      
+      var encrypted = CryptoJS.AES.encrypt(messageToEncrypt, key);
+      
+      document.getElementById("result").innerHTML=encrypted;
+    }
+    
+    function decrypt()
+    {
+      var messageToDecrypt=document.getElementById("encryptOrDecriptMessage").value;
+      
+      var key=document.getElementById("key").value;
+      
+      var decrypted = CryptoJS.AES.decrypt(messageToDecrypt, key);
+      
+      document.getElementById("result").innerHTML=decrypted.toString(CryptoJS.enc.Utf8);
+
+      $("#result").show();
+
+    }
+    
+    </script>
+  <!--AES END-->
 </head>
