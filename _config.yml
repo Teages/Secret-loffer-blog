@@ -96,7 +96,7 @@ replyTo: false
 # 添加你的博客的二级域名，一般来说是你的repository名
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
 # 那么就写成 "/repository-name"
-baseurl: 
+baseurl: /Secret-loffer-blog
 
 #特殊设置
 grey_all: false  # 全站变灰
