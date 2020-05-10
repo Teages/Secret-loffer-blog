@@ -29,6 +29,45 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.AES %}
+    <div class="AES_decrypt">
+      <textarea id="encryptOrDecriptMessage" readonly="readonly" style="display:none">
+        {{ page.AES }}
+      </textarea>
+      <div class="keys">
+        <input type="password" class="pwInput" id="key_1" placeholder="密钥1">
+        <input type="password" class="pwInput" id="key_2" placeholder="密钥2">
+        <input type="password" class="pwInput" id="key_3" placeholder="密钥3">
+        <p><input type="checkbox" id="pwShow" value="pwShow" />是否明文显示密钥 </p>
+        <script>        
+          function checkPWShow() 
+          {            
+            document.getElementById("pwShow").onclick = function () {                
+              var arr = new Array();                
+              var items = document.getElementsByName("pwShow");                 
+              if (document.getElementById("pwShow").checked) {
+                document.getElementById("key_1").type="text";
+                document.getElementById("key_2").type="text";
+                document.getElementById("key_3").type="text";
+              }
+              else
+              {
+                document.getElementById("key_1").type="password";
+                document.getElementById("key_2").type="password";
+                document.getElementById("key_3").type="password";
+              }
+            };        
+          };
+          checkPWShow();    
+        </script>
+      </div>
+      <div class="buttonsContainer">
+      <input class="nbutton" type="button" value="解密" onclick="decrypt()">
+      </div>
+      <p id="result">待解密</p>
+    </div>
+  {% endif %}
+
   {% include clickable-image.html %}
 </article>
 

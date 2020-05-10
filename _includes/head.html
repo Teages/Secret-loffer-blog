@@ -40,7 +40,7 @@
   {% endif %}
 
 
-{{% if replyTo %}}
+{% if site.replyTo %}
   <script type="text/javascript">
         if ("https://" + window.location.hostname != "{{ site.url }}") {
 			var current_url = window.location.href;
@@ -49,14 +49,14 @@
 			window.location.replace(target_url);
 		}
   </script>
-{{% endif %}}
+{% endif %}
 
 
 <!--AES START-->
   <script src="{{ site.url }}/{{ site.baseurl }}/assets/js/aes.js"></script>
-  {{% if site.mdUncode %}}
+  {% if site.mdUncode %}
     <script src="{{ site.url }}/{{ site.baseurl }}/assets/js/markdown-it.min.js"></script>
-  {{% endif %}}
+  {% endif %}
   
   <script type="text/javascript">
 
@@ -64,10 +64,10 @@
     {
       var messageToEncrypt=document.getElementById("encryptOrDecriptMessage").value;
 
-      {{% if site.mdUncode %}}
+      {% if site.mdUncode %}
         var md = window.markdownit();
         messageToEncrypt = md.render(messageToEncrypt.toString(CryptoJS.enc.Utf8));
-      {{% endif %}}
+      {% endif %}
 
       
       var key_1=document.getElementById("key_1").value;
@@ -101,4 +101,17 @@
     
     </script>
   <!--AES END-->
+  <!--Result Copyer-->
+  <script type="text/javascript">
+    function ResultCopyer() {
+      var aux = document.createElement("input"); 
+      aux.setAttribute("value", document.getElementById("result").innerHTML.toString(CryptoJS.enc.Utf8)); 
+      document.body.appendChild(aux); 
+      aux.select();
+      document.execCommand("copy"); 
+      document.getElementById("CopySuccessMessage").innerHTML = "复制成功";
+      setTimeout(function(){document.getElementById("CopySuccessMessage").innerHTML = ""},2000);
+    }
+  </script>
+  <!--Result Copyer END-->
 </head>
