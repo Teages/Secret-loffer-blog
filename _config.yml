@@ -45,6 +45,8 @@ navigation:
     url: /archive
   - name: 标签
     url: /tags
+  - name: 加密
+    url: /encrypt
 
 # 每页的文章数
 paginate: 8
