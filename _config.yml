@@ -20,6 +20,8 @@ AES_password: TeagesIsSoSmart111111111
 # 加密文档是否需要先解析Markdown
 mdUncode: true #需要填true,不需要填false
 
+# 拒绝搜索引擎
+noSearch: true
 
 
 #

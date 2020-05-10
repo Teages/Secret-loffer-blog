@@ -1,6 +1,10 @@
 <head>
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
-
+  {% if site.noSearch %}
+    <meta name="robots" content="noarchive">
+  {% endif %}
+	
+	
   {% include meta.html %}
   {% include fonts.html %}
 
