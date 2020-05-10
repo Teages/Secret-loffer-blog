@@ -810,6 +810,28 @@ textarea {
   width: auto;
 }
 
+// css
+input[type="checkbox"]{
+  display: none;
+}
+
+input[type="checkbox"] + label:before {
+  margin: 5px;
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border:4px solid;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+  transition: all .5s;
+  color: #fdfdfd;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: #00b900;
+}
 
 // Back to Top button 
 .btn-top {

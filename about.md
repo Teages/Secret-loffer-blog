@@ -13,7 +13,10 @@ permalink: /about/
         <input type="password" class="pwInput" id="key_1" placeholder="密钥1">
         <input type="password" class="pwInput" id="key_2" placeholder="密钥2">
         <input type="password" class="pwInput" id="key_3" placeholder="密钥3">
-        <p><input type="checkbox" id="pwShow" value="pwShow" />是否明文显示密钥 </p>
+        <p>
+			<input type="checkbox" id="pwShow" value="pwShow">
+			<label for="pwShow">是否明文显示密钥</label>
+		  </p>
         <script>        
           function checkPWShow() 
           {            

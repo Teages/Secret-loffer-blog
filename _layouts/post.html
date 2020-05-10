@@ -31,6 +31,8 @@ layout: default
 
   {% if page.AES %}
     <div class="AES_decrypt">
+      <hr>
+      <h3 style="margin: 5px">AES 解密器</h3>
       <textarea id="encryptOrDecriptMessage" readonly="readonly" style="display:none">
         {{ page.AES }}
       </textarea>
@@ -38,7 +40,10 @@ layout: default
         <input type="password" class="pwInput" id="key_1" placeholder="密钥1">
         <input type="password" class="pwInput" id="key_2" placeholder="密钥2">
         <input type="password" class="pwInput" id="key_3" placeholder="密钥3">
-        <p><input type="checkbox" id="pwShow" value="pwShow" />是否明文显示密钥 </p>
+        <p>
+          <input type="checkbox" id="pwShow" value="pwShow">
+          <label for="pwShow">是否明文显示密钥</label>
+         </p>
         <script>        
           function checkPWShow() 
           {            
@@ -64,7 +69,7 @@ layout: default
       <div class="buttonsContainer">
       <input class="nbutton" type="button" value="解密" onclick="decrypt()">
       </div>
-      <p id="result">待解密</p>
+      <p style="margin: 5px" id="result">待解密</p>
     </div>
   {% endif %}
 
