@@ -753,6 +753,64 @@ footer {
   }
 }
 
+// Normal button
+
+.nbutton {
+  
+  color: $base-lighten-color;
+  border: 1px solid $divider-color;
+  padding: 10px 20px;
+  background: $background-color;
+  border-radius: 20px;
+  &:hover, &:focus {
+    color: $link-lighten-color;
+    border: 1px solid $link-lighten-color;
+    background-color: $link-bghv-color;
+  }
+
+}
+
+// input
+
+textarea {
+  border: 0 none white;
+  overflow: hidden;
+  padding: 0;
+  outline: none;
+}
+
+.pwInput {
+  color: #f1f3f5;
+  background-color: rgba(5,10,26,.7);
+    -webkit-transition: .2s cubic-bezier(.23,1,.32,1);
+    transition: .2s cubic-bezier(.23,1,.32,1);
+    border: 1px solid transparent;
+    display: block;
+    margin-left: auto;
+    height: 2rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    width: auto;
+    Margin: 5px;
+}
+
+.orginTxt {
+  border-color: hsla(0,0%,100%,.3);
+  border-radius: 2px;
+  background: #050a1a;
+  color: #fff;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  Margin: 5px;
+  width: 100%;
+}
+
+.AES{
+  width: auto;
+}
+
+
 // Back to Top button 
 .btn-top {
     display: none; /* hide the button at the beginning */

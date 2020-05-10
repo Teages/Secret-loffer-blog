@@ -20,6 +20,8 @@ AES_password: TeagesIsSoSmart111111111
 # 加密文档是否需要先解析Markdown
 mdUncode: true #需要填true,不需要填false
 
+
+
 #
 # 下面的设定都是可选的
 #
@@ -98,6 +100,8 @@ baseurl:
 
 #特殊设置
 grey_all: false  # 全站变灰
+
+
 
 #
 # !! 以下所有设置都不需要更改 !!
