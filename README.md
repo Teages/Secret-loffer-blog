@@ -1,5 +1,7 @@
 # Secret Loffer Blog
 
+> 项目足够稳定, 更新放缓
+
 ## 如何使用:
 
 1. 修改`_config.yml`内容
